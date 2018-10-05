@@ -44,14 +44,15 @@ public class EmployeeService {
 
 	public void addEmployee(Employee employee) {
 		Session session = factory.getCurrentSession();
-		session.beginTransaction().commit();
+		/*session.beginTransaction().commit();
 		Employee emp = new Employee();
 		emp.setEmpName(employee.getEmpName());
 		emp.setDesignation(employee.getDesignation());
 		session.save(emp);
 		session.getTransaction().commit();
 		System.out.println(employee.getEmpName() + " saved sucessfully.");
-
+*/	
+		repository.save(employee);
 	}
 
 }
